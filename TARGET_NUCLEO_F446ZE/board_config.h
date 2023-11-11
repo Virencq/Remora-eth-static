@@ -78,17 +78,14 @@ EncoderConfig EncoderConfigs[] = {};
 
 //Servo thread objects - eStop, Reset Pin, Blink, Digital Pin, PWM, Temperature, Switch, QEI
 
-DigitalPinConfig DOConfigs[] = {{"STEP_ENA", "PC_7", PULLNONE, false, 0}, //Comment, pin, modifier, invert, data bit
-                                {"COOLANT", "PB_5", PULLNONE, false, 1},
-                                {"AUX1", "PB_3", PULLNONE, false, 2}};
+DigitalPinConfig DOConfigs[] = {{"COOLANT", "PF_12", PULLNONE, false, 0}}; //Comment, pin, modifier, invert, data bit
+                                //{"AUX1", "PB_3", PULLNONE, false, }};
 
-DigitalPinConfig DIConfigs[] = {{"ALL_HOME", "PE_9", PULLUP, false, 0},
-                                {"RUN", "PE_11", PULLUP, false, 1},
-                                {"RUN", "PF_14", PULLUP, false, 2},
-                                {"Z_LIMIT", "PE_13", PULLUP, false, 2},
-                                {"ESTOP", "PF_15", PULLUP, false, 3},
-                                {"ABORT", "PG_14", PULLUP, false, 4},
-                                {"HOLD", "PG_9", PULLUP, false, 5}};  //Comment, pin, modifier, invert, data bit
+DigitalPinConfig DIConfigs[] = {{"ALL_HOME", "PF_13", PULLUP, false, 0},
+                                {"RUN", "PE_9", PULLUP, false, 1},
+                                {"ESTOP", "PE_11", PULLUP, false, 2},
+                                {"RESUME", "PF_14", PULLUP, false, 3},
+                                {"MCON", "PE_13", PULLUP, false, 4}};  //Comment, pin, modifier, invert, data bit
 /*
                                 {"ChA", "PD_0", PULLUP, false, 6},
                                 {"Ch_Index", "PD_1", PULLUP, false, 7}};  //Comment, pin, modifier, invert, data bit
@@ -97,7 +94,7 @@ DigitalPinConfig DIConfigs[] = {{"ALL_HOME", "PE_9", PULLUP, false, 0},
 
 
 //PWMPinConfig PWMConfigs[] = {};        
-PWMPinConfig PWMConfigs[] = {{"Spindle PWM", "PB_11"}};
+PWMPinConfig PWMConfigs[] = {{"Spindle PWM", "PD_15"}};
 
 BlinkPinConfig BlinkConfigs[] = {};    
 
