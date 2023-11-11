@@ -169,13 +169,13 @@ const char * IP_Addr    =       "10.10.10.10";
 const char * IP_Subnet  =       "255.255.255.0";
 const char * IP_Gateway =       "10.10.10.1";
 
-#define MOSI0               PB_15           
-#define MISO0               PB_14
-#define SCK0                PB_13
-#define SSEL0               PB_1
+#define MOSI2               PB_15           
+#define MISO2               PB_14
+#define SCK2                PB_13
+#define SSEL2               PB_1
 
-SPI spi(MOSI0, MISO0, SCK0); // mosi, miso, sclk
-WIZnetInterface eth(&spi, SSEL0, PB_2); // spi, cs, reset    
+SPI spi(MOSI2, MISO2, SCK2); // mosi, miso, sclk
+WIZnetInterface eth(&spi, SSEL2, PB_2); // spi, cs, reset    
 WIZnet_UDPSocket udp;
 Endpoint server;
 /***********************************************************************
@@ -666,15 +666,8 @@ int main()
 
                 // wait for threads to read IO before testing for PRUreset
                 //wait(1);
-
-
-
-
-
-
-
-            wait_us(1000000);
- }
+                wait_us(1000000);
+            }
 
             if (PRUreset)
             {
@@ -845,7 +838,6 @@ int main()
       }
 
     //wait(LOOP_TIME);
-    wait_us(LOOP_TIME * 1000000);
-
+    wait_ns(100000);
     }
 }
