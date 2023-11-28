@@ -137,7 +137,7 @@ volatile uint16_t* ptrOutputs;
 // SD card access and Remora communication protocol
 #if defined TARGET_NUCLEO_F446RE || TARGET_NUCLEO_F446ZE
 //#if defined TARGET_NUCLEO_F446RE 
-    RemoraComms comms(ptrRxData, ptrTxData, SPI2, PB_1);
+    RemoraComms comms(ptrRxData, ptrTxData, SPI1, PA_15);
 
 //#elif defined TARGET_NUCLEO_F446ZE
    // RemoraComms comms(ptrRxData, ptrTxData, SPI2, PB_1);
@@ -169,13 +169,13 @@ const char * IP_Addr    =       "10.10.10.10";
 const char * IP_Subnet  =       "255.255.255.0";
 const char * IP_Gateway =       "10.10.10.1";
 
-#define MOSI2               PB_15           
-#define MISO2               PB_14
-#define SCK2                PB_13
-#define SSEL2               PB_1
+#define MOSI0               PB_5           
+#define MISO0               PB_4
+#define SCK0                PB_3
+#define SSEL0               PA_15
 
-SPI spi(MOSI2, MISO2, SCK2); // mosi, miso, sclk
-WIZnetInterface eth(&spi, SSEL2, PB_2); // spi, cs, reset    
+SPI spi(MOSI0, MISO0, SCK0); // mosi, miso, sclk
+WIZnetInterface eth(&spi, SSEL0, PA_9); // spi, cs, reset    
 WIZnet_UDPSocket udp;
 Endpoint server;
 /***********************************************************************
